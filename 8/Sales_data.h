@@ -27,21 +27,45 @@
  * 	Fax: (201) 236-3290
 */ 
 
+#ifndef SALES_DATA_H
+#define SALES_DATA_H
+
+#include <string>
 #include <iostream>
-using std::cerr; using std::cin; using std::cout; using std::endl;
 
-#include "Sales_data.h"
-int main()
+class Sales_data {
+friend Sales_data add(const Sales_data&, const Sales_data&);
+friend std::ostream &print(std::ostream&, const Sales_data&);
+friend std::istream &read(std::istream&, Sales_data&);
+public:
+	// constructors
+	Sales_data(): units_sold(0), revenue(0.0) { }
+	Sales_data(const std::string &s): 
+	           bookNo(s), units_sold(0), revenue(0.0) { }
+	Sales_data(const std::string &s, unsigned n, double p):
+	           bookNo(s), units_sold(n), revenue(p*n) { }
+	Sales_data(std::istream &);
+
+	// operations on Sales_data objects
+	std::string isbn() const { return bookNo; }
+	Sales_data& combine(const Sales_data&);
+	double avg_price() const;
+private:
+	std::string bookNo;
+	unsigned units_sold;
+	double revenue;
+};
+
+
+// nonmember Sales_data interface functions
+Sales_data add(const Sales_data&, const Sales_data&);
+std::ostream &print(std::ostream&, const Sales_data&);
+std::istream &read(std::istream&, Sales_data&);
+
+// used in future chapters
+inline 
+bool compareIsbn(const Sales_data &lhs, const Sales_data &rhs)
 {
-	Sales_data data1, data2;
-	if (read(cin, data1) && read(cin, data2)) {  // read the transactions
-		if (data1.isbn() == data2.isbn()) {      // check isbns
-			data1.combine(data2);                // add the transactions
-			print(cout, data1);                  // print the results
-			cout << endl;                        // followed by a newline 
-		}
-	} else
-		cerr << "Input failed!" << endl;        
-
-	return 0;
+	return lhs.isbn() < rhs.isbn();
 }
+#endif
