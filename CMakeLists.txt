@@ -20,6 +20,11 @@ add_executable(Cprimer_Add_Item 7/add_item.cpp 7/Sales_data.h 7/Sales_data.cpp)
 # 内存模型、命令空间
 add_executable(namespace-memory namespace-memory/golf.h namespace-memory/golf.cpp namespace-memory/golfMain.cpp)
 
+# 对象
+add_executable(Cprimer_Object object/Persion.cpp object/Persion.h object/PersionMain.cpp)
+# 操作符重载
+add_executable(Cprimer_Operator operator/Score.cpp operator/Score.h operator/ScoreMain.cpp)
+
 # 这里需要将子项目导入
 # “-”是你创建的子项目的名称
 # ADD_SUBDIRECTORY(-)
