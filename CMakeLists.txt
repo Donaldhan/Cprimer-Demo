@@ -15,15 +15,19 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(Cprimer_Demo main.cpp)
 # add_executable(Cprimer_Demo 6/good_printmain.cpp)
 # add_library(test_library STATIC 7/Sales_data.cpp)
-add_executable(Cprimer_Add_Item 7/add_item.cpp 7/Sales_data.h 7/Sales_data.cpp)
+add_executable(Cprimer_Add_Item 7/add_item.cpp 7/Sales_data.h 7/Sales_data.cpp extend-isa/extends-isa-base/Animals.h)
 
 # 内存模型、命令空间
 add_executable(namespace-memory namespace-memory/golf.h namespace-memory/golf.cpp namespace-memory/golfMain.cpp)
 
 # 对象
 add_executable(Cprimer_Object object/Persion.cpp object/Persion.h object/PersionMain.cpp)
+
 # 操作符重载
 add_executable(Cprimer_Operator operator/Score.cpp operator/Score.h operator/ScoreMain.cpp)
+
+# 类继承
+add_executable(Cprimer_Extends extend-isa/extends-isa-base/Animals.cpp extend-isa/AnimalsMain.cpp extend-isa/extends-isa-base/Cat.cpp extend-isa/extends-isa-base/Cat.h extend-isa/extends-isa-base/Dog.cpp extend-isa/extends-isa-base/Dog.h)
 
 # 这里需要将子项目导入
 # “-”是你创建的子项目的名称
