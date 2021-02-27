@@ -15,19 +15,20 @@ class Dog : public Animals{
 private:
     string animalTypeDesc;
 public:
-    Dog();
+//    Dog();
     Dog(string nm, const char * nickNM, int ag);
     /**
      *
      */
     ~Dog() override;
     void show() const override;
+    void move() const ;
     /**
      * 赋值构造
      * @param animals
      * @return
      */
-    Dog & operator=(const Dog & dog);
+//    Dog & operator=(const Dog & dog);
 };
 
 

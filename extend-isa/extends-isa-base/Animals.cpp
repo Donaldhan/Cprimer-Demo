@@ -12,30 +12,34 @@
 #include "Animals.h"
 
 Animals::Animals(string nm, const char *nickNM, int ag) {
-    name = std::move(nm);
+    name = nm;
     int len = strlen(nickNM);
-    nickName = new char[len];
+    nickName = new char[len+1];
     strcpy(nickName, nickNM);
     age = ag;
+    cout << "Animals create " << getName() << "\n";
+    std::cout << "Animals create name:" << name << " nickName: " << nickName <<" age:" << age <<" animalsType:" << animalsType<< "\n";
 }
 
 
+/*
 Animals::Animals(const Animals & animals) {
     name = animals.name;
     nickName = animals.nickName;
     age = animals.age;
 }
+*/
 
 Animals::~Animals(){
   delete nickName;
-  cout << "Animals destory" << name;
+  cout << "Animals destory " << name << "\n";
 }
 
 void Animals::show() const {
-   std::cout << "name:" << name << " nickName:" << nickName <<" age:" << age << "\n";
+   std::cout << "name:" << name << " nickName:" << nickName <<" age:" << age <<" animalsType:" << animalsType<< "\n";
 }
 
-Animals &  Animals::operator=(const Animals & animals) {
+/*Animals &  Animals::operator=(const Animals & animals) {
     if(this == &animals){
         return *this;
     }
@@ -44,9 +48,9 @@ Animals &  Animals::operator=(const Animals & animals) {
      age = animals.age;
      animalsType = animals.animalsType;
     return *this;
-}
+}*/
 
-const string &Animals::getName() const {
+const string Animals::getName() const {
     return name;
 }
 

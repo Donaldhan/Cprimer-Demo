@@ -24,17 +24,17 @@ private:
     char * nickName;
     int animalsType{};
 public:
-    const string &getName() const;
+    const string getName() const;
     void setName(const string &name);
     int getAge() const;
     void setAge(int age);
     int getAnimalsType() const;
-    Animals() {
-        name = "";
+  /*  Animals() {
+        name = "default";
         age = 0;
         nickName = new char[1];
         nickName[1] = '\0';
-    };
+    };*/
     /**
      *
      * @param nm
@@ -46,7 +46,7 @@ public:
      * 复制构造
      * @param animals
      */
-    Animals(const Animals & animals);
+//    Animals(const Animals & animals);
     /**
      * 析构函数 虚函数，便于销毁时，删除new的空间
      */
@@ -60,7 +60,7 @@ public:
      * @param animals
      * @return
      */
-    Animals & operator=(const Animals & animals);
+//    Animals & operator=(const Animals & animals);
 };
 
 
