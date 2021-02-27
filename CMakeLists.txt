@@ -29,6 +29,11 @@ add_executable(Cprimer_Operator operator/Score.cpp operator/Score.h operator/Sco
 # 类继承
 add_executable(Cprimer_Extends extend-isa/extends-isa-base/Animals.cpp extend-isa/AnimalsMain.cpp extend-isa/extends-isa-base/Cat.cpp extend-isa/extends-isa-base/Cat.h extend-isa/extends-isa-base/Dog.cpp extend-isa/extends-isa-base/Dog.h)
 
+# 模板
+add_executable(Cprimer_Template template/Stack.cpp template/Stack.h template/StackMain.cpp)
+
+# 模板
+add_executable(Cprimer_Collection collections/CollectionsMain.cpp)
 # 这里需要将子项目导入
 # “-”是你创建的子项目的名称
 # ADD_SUBDIRECTORY(-)
