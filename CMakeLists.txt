@@ -5,7 +5,20 @@
 project(Cprimer_Demo)
 
 # xx是你创建项目的时候使用的C++标准
+
 set(CMAKE_CXX_STANDARD 11)
+#set(CMAKE_CXX_FLAGS$ {CMAKE_CXX_FLAGS} -std = c ++ 11)
+
+#添加头文件搜索路径
+#include_directories(E:\\blockchain\\c++\\boost_1_65_0)
+include_directories(E:\\blockchain\\c++\\boost_1_75_0)
+#include_directories(E:\\blockchain\\c++\\boost_1_75_0\\libs)
+
+#添加库文件搜索路径
+#link_directories(/usr/local/Cellar/boost/1.68.0_1/lib/)
+
+
+#add_compile_options(-std=c++0x)
 
 
 # “+”要更改成你想给这个结局方案的名称（这个可自定义），“*”是该主项目下的源文件名称
@@ -15,7 +28,7 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(Cprimer_Demo main.cpp)
 # add_executable(Cprimer_Demo 6/good_printmain.cpp)
 # add_library(test_library STATIC 7/Sales_data.cpp)
-add_executable(Cprimer_Add_Item 7/add_item.cpp 7/Sales_data.h 7/Sales_data.cpp extend-isa/extends-isa-base/Animals.h)
+add_executable(Cprimer_Add_Item cplus/7/add_item.cpp cplus/7/Sales_data.h cplus/7/Sales_data.cpp extend-isa/extends-isa-base/Animals.h)
 
 # 内存模型、命令空间
 add_executable(namespace-memory namespace-memory/golf.h namespace-memory/golf.cpp namespace-memory/golfMain.cpp)
@@ -34,6 +47,14 @@ add_executable(Cprimer_Template template/Stack.cpp template/Stack.h template/Sta
 
 # 模板
 add_executable(Cprimer_Collection collections/CollectionsMain.cpp)
+
+# 线程管理
+add_executable(Cpp-Concurrency-in-Action_thread_task thread_task/ThreadTasks.cpp)
+
+# 互斥量（共享数据管理）
+add_executable(Cpp-Concurrency-in-Action_mutex  mutex/MutexMain.cpp)
+
+
 # 这里需要将子项目导入
 # “-”是你创建的子项目的名称
 # ADD_SUBDIRECTORY(-)
@@ -45,3 +66,6 @@ add_executable(Cprimer_Collection collections/CollectionsMain.cpp)
 # “+”与“*”指尖以及“-”与“/”之间都有空格
 # add_executable(+ *.cpp)
 # add_executable(- /.cpp)
+
+# 动态库
+#target_link_libraries(test boost_thread-mt boost_system)
