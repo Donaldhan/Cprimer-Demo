@@ -12,6 +12,8 @@ set(CMAKE_CXX_STANDARD 11)
 #添加头文件搜索路径
 #include_directories(E:\\blockchain\\c++\\boost_1_65_0)
 include_directories(E:\\blockchain\\c++\\boost_1_75_0)
+
+#include_directories(F:\\CPlus\\boost_1_75_0)
 #include_directories(E:\\blockchain\\c++\\boost_1_75_0\\libs)
 
 #添加库文件搜索路径
