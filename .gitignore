@@ -36,3 +36,7 @@
 .git
 cmake-build-debug
 cmake-build-release
+
+# log
+*.log
+log

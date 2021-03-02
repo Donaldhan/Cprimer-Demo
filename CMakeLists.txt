@@ -9,9 +9,19 @@ project(Cprimer_Demo)
 set(CMAKE_CXX_STANDARD 11)
 #set(CMAKE_CXX_FLAGS$ {CMAKE_CXX_FLAGS} -std = c ++ 11)
 
+#当编译一个需要第三方库的项目时，需要知道：
+#去哪找头文件（.h），-I（GCC）
+#INCLUDE_DIRECTORIES()
+#去哪找库文件（.so/.dll/.lib/.dylib/...），-L（GCC）
+#LINK_DIRECTORIES()
+#需要链接的库文件的名字：-l（GCC）
+#LINK_LIBRARIES(库名称即可)
 #添加头文件搜索路径
+include_directories(include/spdlog)
+#LogFactory
+include_directories(spdlog)
 #include_directories(E:\\blockchain\\c++\\boost_1_65_0)
-include_directories(E:\\blockchain\\c++\\boost_1_75_0)
+include_directories(E:/blockchain/c++/boost_1_75_0)
 
 #include_directories(F:\\CPlus\\boost_1_75_0)
 #include_directories(E:\\blockchain\\c++\\boost_1_75_0\\libs)
@@ -47,7 +57,15 @@ add_executable(Cprimer_Extends extend-isa/extends-isa-base/Animals.cpp extend-is
 # 模板
 add_executable(Cprimer_Template template/Stack.cpp template/Stack.h template/StackMain.cpp)
 
-# 模板
+# C++Tuple元组的详细用法
+add_executable(Cprimer_Tuple tuple/TupleMain.cpp)
+
+# spdlog
+add_executable(Cprimer_spdlog spdlog/SpdLogMain.cpp spdlog/LogFactory.cpp spdlog/LogFactory.h spdlog/LogFactoryTest.cpp)
+add_executable(Cprimer_LogFactory spdlog/LogFactoryTest.cpp spdlog/LogFactory.cpp spdlog/LogFactory.h)
+
+
+# 集合
 add_executable(Cprimer_Collection collections/CollectionsMain.cpp)
 
 # 线程管理
