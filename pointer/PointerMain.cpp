@@ -54,4 +54,15 @@ int main() {
     //nullptr
 //    log->info("sharedPtrP1 name :{}",sharedPtrP1->getName());
     log->info("sharedPtrP2 name :{}",sharedPtrP2->getName());
+    auto_ptr<Persion> autoPtr(new Persion("123"));
+    auto_ptr<Persion> autoPtr1(new Persion("456"));
+    //会导致autoPtr1执行的指针对象悬空，内存泄漏
+    autoPtr1 = autoPtr;
+    log->info("auto_ptr persion name :{}",autoPtr1->getName());
+    log->info("auto_ptr persion autoPtr is null :{}",autoPtr.get() == nullptr);
+    log->info("auto_ptr persion autoPtr1 is null :{}",autoPtr1.get() == nullptr);
+    log->info("after move sharedPtrP2 userCount :{}",sharedPtrP2.use_count());
+    weak_ptr<Persion> weakPtr = sharedPtrP2;
+    log->info("after move sharedPtrP2 userCount :{}",sharedPtrP2.use_count());
+    log->info("weakPtr userCount :{}", weakPtr.use_count());
 }

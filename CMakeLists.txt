@@ -96,6 +96,11 @@ add_executable(Cprimer_Lamdba lambda/LamdbaMain.cpp)
 # 智能指针
 add_executable(Cprimer_Pointer pointer/PointerMain.cpp)
 
+# 智能指针
+add_executable(Cprimer_Memory memory/MemoryMain.cpp)
+
+
+
 # 这里需要将子项目导入
 # “-”是你创建的子项目的名称
 # ADD_SUBDIRECTORY(-)
