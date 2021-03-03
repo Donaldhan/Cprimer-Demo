@@ -14,7 +14,18 @@
 
 class LogFactory {
 public:
-     std::shared_ptr<spdlog::logger> getLogger(const std::string logName);
+    /**
+     *
+     * @param logName
+     * @return
+     */
+     static std::shared_ptr<spdlog::logger> getLogger(const std::string logName);
+     /**
+      *
+      * @param logName
+      * @return
+      */
+     static std::shared_ptr<spdlog::logger> logger(const std::string logName);
 };
 
 

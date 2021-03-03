@@ -4,6 +4,10 @@
 # 自己的项目名称
 project(Cprimer_Demo)
 
+# 版本号.
+set (CPRIMER_DEMO_VERSION_MAJOR 1)
+set (CPRIMER_DEMO_VERSION_MINOR 0)
+
 # xx是你创建项目的时候使用的C++标准
 
 set(CMAKE_CXX_STANDARD 11)
@@ -18,10 +22,18 @@ set(CMAKE_CXX_STANDARD 11)
 #LINK_LIBRARIES(库名称即可)
 #添加头文件搜索路径
 include_directories(include/spdlog)
+include_directories(include/json)
 #LogFactory
 include_directories(spdlog)
 #include_directories(E:\\blockchain\\c++\\boost_1_65_0)
 include_directories(E:/blockchain/c++/boost_1_75_0)
+
+# Logger
+include_directories(logger)
+#include_directories (${PROJECT_SOURCE_DIR}/logger)
+#add_subdirectory (logger)
+
+
 
 #include_directories(F:\\CPlus\\boost_1_75_0)
 #include_directories(E:\\blockchain\\c++\\boost_1_75_0\\libs)
@@ -58,10 +70,10 @@ add_executable(Cprimer_Extends extend-isa/extends-isa-base/Animals.cpp extend-is
 add_executable(Cprimer_Template template/Stack.cpp template/Stack.h template/StackMain.cpp)
 
 # C++Tuple元组的详细用法
-add_executable(Cprimer_Tuple tuple/TupleMain.cpp)
+add_executable(Cprimer_Tuple tuple/TupleMain.cpp tuple/TupleUtil.cpp tuple/TupleUtil.h tuple/TuplePrinter.h tuple/TupleString.cpp tuple/TupleString.h)
 
 # spdlog
-add_executable(Cprimer_spdlog spdlog/SpdLogMain.cpp spdlog/LogFactory.cpp spdlog/LogFactory.h spdlog/LogFactoryTest.cpp)
+add_executable(Cprimer_spdlog spdlog/SpdLogMain.cpp spdlog/LogFactory.cpp spdlog/LogFactory.h spdlog/LogFactoryTest.cpp logger/LoggerFactory.h)
 add_executable(Cprimer_LogFactory spdlog/LogFactoryTest.cpp spdlog/LogFactory.cpp spdlog/LogFactory.h)
 
 
@@ -89,3 +101,4 @@ add_executable(Cpp-Concurrency-in-Action_mutex  mutex/MutexMain.cpp)
 
 # 动态库
 #target_link_libraries(test boost_thread-mt boost_system)
+#target_link_libraries (Cprimer_Tuple Logger)

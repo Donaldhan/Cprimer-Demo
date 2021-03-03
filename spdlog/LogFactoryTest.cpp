@@ -7,7 +7,8 @@
 */
 #include "LogFactory.h"
 int main(){
-    auto log = LogFactory().getLogger("LogFactoryTest");
+//    auto log = LogFactory().getLogger("LogFactoryTest");
+    auto log = LogFactory::logger("LogFactoryTest");
     log->info("Test spdlog output:name:{}, age:{}", "jack", 23);
     log->flush();
 }
