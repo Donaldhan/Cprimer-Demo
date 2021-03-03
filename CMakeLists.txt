@@ -87,6 +87,15 @@ add_executable(Cpp-Concurrency-in-Action_thread_task thread_task/ThreadTasks.cpp
 add_executable(Cpp-Concurrency-in-Action_mutex  mutex/MutexMain.cpp)
 
 
+# 基础
+add_executable(Cprimer_Base base/BaseMain.cpp)
+
+# Lamdba
+add_executable(Cprimer_Lamdba lambda/LamdbaMain.cpp)
+
+# 智能指针
+add_executable(Cprimer_Pointer pointer/PointerMain.cpp)
+
 # 这里需要将子项目导入
 # “-”是你创建的子项目的名称
 # ADD_SUBDIRECTORY(-)

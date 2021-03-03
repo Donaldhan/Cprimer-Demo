@@ -21,6 +21,7 @@ int main() {
     std::tuple<int, std::string, float> t1(10, "Test", 3.14);
 //    json json1 = t1;
 //    log->info("tuple_cat :{}", tupleToString(t1));
+//    log->info("tuple_cat :{}", std::to_string(t1));
     printTuple(t1);
     int n = 7;
 //    tuple_cat连接多个tupe
