@@ -74,11 +74,11 @@ add_executable(Cprimer_Tuple tuple/TupleMain.cpp tuple/TupleUtil.cpp tuple/Tuple
 
 # spdlog
 add_executable(Cprimer_spdlog spdlog/SpdLogMain.cpp spdlog/LogFactory.cpp spdlog/LogFactory.h spdlog/LogFactoryTest.cpp logger/LoggerFactory.h)
-add_executable(Cprimer_LogFactory spdlog/LogFactoryTest.cpp spdlog/LogFactory.cpp spdlog/LogFactory.h)
+add_executable(LogFactory spdlog/LogFactoryTest.cpp spdlog/LogFactory.cpp spdlog/LogFactory.h)
 
 
 # 集合
-add_executable(Cprimer_Collection collections/CollectionsMain.cpp)
+add_executable(Collection collections/CollectionsMain.cpp)
 
 # 线程管理
 add_executable(Cpp-Concurrency-in-Action_thread_task thread_task/ThreadTasks.cpp)
@@ -88,19 +88,22 @@ add_executable(Cpp-Concurrency-in-Action_mutex  mutex/MutexMain.cpp )
 
 
 # 基础
-add_executable(Cprimer_Base base/BaseMain.cpp)
+add_executable(Base base/BaseMain.cpp)
 
 # Lamdba
-add_executable(Cprimer_Lamdba lambda/LamdbaMain.cpp)
+add_executable(Lamdba lambda/LamdbaMain.cpp)
 
 # 智能指针
-add_executable(Cprimer_Pointer pointer/PointerMain.cpp)
+add_executable(pointer pointer/PointerMain.cpp)
 
 # 内存分配与回收
-add_executable(Cprimer_Memory memory/MemoryMain.cpp memory/VectorDemo.cpp memory/VectorDemo.h)
+add_executable(memory memory/MemoryMain.cpp memory/VectorDemo.cpp memory/VectorDemo.h)
 
 # 强制类型转换
-add_executable(Cprimer_CAST cast/CastMain.cpp)
+add_executable(cast cast/CastMain.cpp)
+
+# boost
+add_executable(Boost boost/BoostMain.cpp)
 
 # 这里需要将子项目导入
 # “-”是你创建的子项目的名称
