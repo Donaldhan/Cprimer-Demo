@@ -102,6 +102,12 @@ add_executable(memory memory/MemoryMain.cpp memory/VectorDemo.cpp memory/VectorD
 # 强制类型转换
 add_executable(cast cast/CastMain.cpp)
 
+# 函数
+add_executable(function function/FunctionMain.cpp)
+
+# chrono
+add_executable(chrono chrono/ChronoMain.cpp)
+
 # boost
 add_executable(Boost boost/BoostMain.cpp)
 
