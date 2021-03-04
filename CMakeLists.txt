@@ -97,7 +97,7 @@ add_executable(Cprimer_Lamdba lambda/LamdbaMain.cpp)
 add_executable(Cprimer_Pointer pointer/PointerMain.cpp)
 
 # 智能指针
-add_executable(Cprimer_Memory memory/MemoryMain.cpp)
+add_executable(Cprimer_Memory memory/MemoryMain.cpp memory/VectorDemo.cpp memory/VectorDemo.h)
 
 
 
