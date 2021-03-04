@@ -84,7 +84,7 @@ add_executable(Cprimer_Collection collections/CollectionsMain.cpp)
 add_executable(Cpp-Concurrency-in-Action_thread_task thread_task/ThreadTasks.cpp)
 
 # 互斥量（共享数据管理）
-add_executable(Cpp-Concurrency-in-Action_mutex  mutex/MutexMain.cpp)
+add_executable(Cpp-Concurrency-in-Action_mutex  mutex/MutexMain.cpp )
 
 
 # 基础
@@ -96,10 +96,11 @@ add_executable(Cprimer_Lamdba lambda/LamdbaMain.cpp)
 # 智能指针
 add_executable(Cprimer_Pointer pointer/PointerMain.cpp)
 
-# 智能指针
+# 内存分配与回收
 add_executable(Cprimer_Memory memory/MemoryMain.cpp memory/VectorDemo.cpp memory/VectorDemo.h)
 
-
+# 强制类型转换
+add_executable(Cprimer_CAST cast/CastMain.cpp)
 
 # 这里需要将子项目导入
 # “-”是你创建的子项目的名称
