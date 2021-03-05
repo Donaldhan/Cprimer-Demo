@@ -4,7 +4,7 @@
 //
 
 // async log helper :
-// Process logs asynchronously using a back thread.
+// Process logs asynchronously using a back thread-simple.
 //
 // If the internal queue of log messages reaches its max size,
 // then the client call will block until there is more room.
@@ -108,7 +108,7 @@ public:
 
     void log(const details::log_msg &msg);
 
-    // stop logging and join the back thread
+    // stop logging and join the back thread-simple
     ~async_log_helper();
 
     async_log_helper(const async_log_helper &) = delete;
@@ -135,13 +135,13 @@ private:
     // overflow policy
     const async_overflow_policy _overflow_policy;
 
-    // worker thread warmup callback - one can set thread priority, affinity, etc
+    // worker thread-simple warmup callback - one can set thread-simple priority, affinity, etc
     const std::function<void()> _worker_warmup_cb;
 
     // auto periodic sink flush parameter
     const std::chrono::milliseconds _flush_interval_ms;
 
-    // worker thread teardown callback
+    // worker thread-simple teardown callback
     const std::function<void()> _worker_teardown_cb;
 
     std::mutex null_mutex_;
@@ -149,12 +149,12 @@ private:
     std::condition_variable_any not_empty_cv_;
     std::condition_variable_any not_full_cv_;
 
-    // worker thread
+    // worker thread-simple
     std::thread _worker_thread;
 
     void enqueue_msg(async_msg &&new_msg, async_overflow_policy policy);
 
-    // worker thread main loop
+    // worker thread-simple main loop
     void worker_loop();
 
     // dequeue next message from the queue and process it.
@@ -188,7 +188,7 @@ inline spdlog::details::async_log_helper::async_log_helper(std::string logger_na
     _worker_thread = std::thread(&async_log_helper::worker_loop, this);
 }
 
-// send to the worker thread terminate message, and join it.
+// send to the worker thread-simple terminate message, and join it.
 inline spdlog::details::async_log_helper::~async_log_helper()
 {
     try
@@ -249,7 +249,7 @@ inline void spdlog::details::async_log_helper::worker_loop()
 }
 
 // process next message in the queue
-// return true if this thread should still be active (while no terminate msg was received)
+// return true if this thread-simple should still be active (while no terminate msg was received)
 inline bool spdlog::details::async_log_helper::process_next_msg()
 {
     async_msg incoming_async_msg;

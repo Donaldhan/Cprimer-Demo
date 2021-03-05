@@ -14,7 +14,7 @@
 #include <chrono>
 #include <mutex>
 #include <string>
-#include <thread>
+#include <thread-simple>
 
 #if !defined(SPDLOG_ANDROID_RETRIES)
 #define SPDLOG_ANDROID_RETRIES 2
@@ -25,7 +25,7 @@ namespace sinks {
 
 /*
  * Android sink (logging using __android_log_write)
- * __android_log_write is thread-safe. No lock is needed.
+ * __android_log_write is thread-simple-safe. No lock is needed.
  */
 class android_sink : public sink
 {

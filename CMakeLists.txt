@@ -80,11 +80,7 @@ add_executable(LogFactory spdlog/LogFactoryTest.cpp spdlog/LogFactory.cpp spdlog
 # 集合
 add_executable(Collection collections/CollectionsMain.cpp)
 
-# 线程管理
-add_executable(Cpp-Concurrency-in-Action_thread_task thread_task/ThreadTasks.cpp)
 
-# 互斥量（共享数据管理）
-add_executable(Cpp-Concurrency-in-Action_mutex  mutex/MutexMain.cpp )
 
 
 # 基础
@@ -105,11 +101,54 @@ add_executable(cast cast/CastMain.cpp)
 # 函数
 add_executable(function function/FunctionMain.cpp)
 
-# chrono
+# chrono 时间库
 add_executable(chrono chrono/ChronoMain.cpp)
+
+# Cpp-Concurrency-in-Action
+## 线程管理
+add_executable(Concurrency-thread_task concurrent/ThreadTasks.cpp)
+add_executable(Concurrency-thread concurrent/thread-simple/ThreadSimpleMain.cpp)
+add_executable(Concurrency-thread-asyn-future concurrent/thread-asyn-future/ThreadAsynFutureMain.cpp)
+
+
+### 线程池
+#TODO
+add_executable(Concurrency-thread-pool concurrent/thead-pool/TheadPoolMain.cpp)
+
+
+
+## 互斥量（共享数据管理）
+add_executable(Concurrency-mutex concurrent/mutex/MutexMain.cpp)
+add_executable(Concurrency-mutex-simple  concurrent/mutex-simple/MutexSimpleMain.cpp)
+add_executable(Concurrency-mutex-lock-gurad   concurrent/mutex-lock-guard/LockGuradMain.cpp )
+add_executable(Concurrency-mutex-lock-gurad-x concurrent/mutex-lock-guard/LockGuradMainWithAdoptLock.cpp)
+add_executable(Concurrency-mutex-unique-lock concurrent/mutex-unique-lock/UniqueLockMain.cpp)
+add_executable(Concurrency-mutex-condition concurrent/mutex-condition/MutexConditionMain.cpp)
+#TODO
+add_executable(Concurrency-mutex-ReadWriteLock concurrent/mutex-read-write-lock/ReadWriteLockMain.cpp)
+
+## 原子操作
+#TODO
+add_executable(Concurrency-atomic concurrent/atomic/AtomicMain.cpp)
+
+## 并发队列
+#TODO
+add_executable(Concurrency-queue concurrent/queue/ConcurrentQueueMain.cpp)
+
+
+# 网络通信(nio aio,bio,epoll,reactor)
+#TODO
+add_executable(Concurrency-network concurrent/network/NetworkMain.cpp)
+
+
+
+
+
 
 # boost
 add_executable(Boost boost/BoostMain.cpp)
+
+
 
 # 这里需要将子项目导入
 # “-”是你创建的子项目的名称

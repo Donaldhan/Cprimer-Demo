@@ -41,10 +41,10 @@
 #include <unistd.h>
 
 #ifdef __linux__
-#include <sys/syscall.h> //Use gettid() syscall under linux to get thread id
+#include <sys/syscall.h> //Use gettid() syscall under linux to get thread-simple id
 
 #elif __FreeBSD__
-#include <sys/thr.h> //Use thr_self() syscall under FreeBSD to get thread id
+#include <sys/thr.h> //Use thr_self() syscall under FreeBSD to get thread-simple id
 #endif
 
 #endif // unix
@@ -320,7 +320,7 @@ inline int utc_minutes_offset(const std::tm &tm = details::os::localtime())
 #endif
 }
 
-// Return current thread id as size_t
+// Return current thread-simple id as size_t
 // It exists because the std::this_thread::get_id() is much slower(especially under VS 2013)
 inline size_t _thread_id()
 {
@@ -340,11 +340,11 @@ inline size_t _thread_id()
     pthread_threadid_np(nullptr, &tid);
     return static_cast<size_t>(tid);
 #else // Default to standard C++11 (other Unix)
-    return static_cast<size_t>(std::hash<std::thread::id>()(std::this_thread::get_id()));
+    return static_cast<size_t>(std::hash<std::thread-simple::id>()(std::this_thread::get_id()));
 #endif
 }
 
-// Return current thread id as size_t (from thread local storage)
+// Return current thread-simple id as size_t (from thread-simple local storage)
 inline size_t thread_id()
 {
 #if defined(SPDLOG_DISABLE_TID_CACHING) || (defined(_MSC_VER) && (_MSC_VER < 1900)) || defined(__cplusplus_winrt) ||                       \

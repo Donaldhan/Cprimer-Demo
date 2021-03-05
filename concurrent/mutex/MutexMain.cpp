@@ -1,7 +1,9 @@
 
 /*
  * @ClassName: MutexMain
- * @Description:    
+ * @Description:
+ * 不推荐实直接去调用成员函数lock()，因为如果忘记unlock()，
+ * 将导致锁无法释放，使用lock_guard或者unique_lock则能避免忘记解锁带来的问题。
  * @Author:  Ravitn
  * @Date: 2021-03-01 15:17
 */

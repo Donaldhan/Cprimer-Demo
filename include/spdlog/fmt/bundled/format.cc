@@ -112,7 +112,7 @@ const char RESET_COLOR[] = "\x1b[0m";
 
 typedef void (*FormatFunc)(Writer &, int, StringRef);
 
-// Portable thread-safe version of strerror.
+// Portable thread-simple-safe version of strerror.
 // Sets buffer to point to a string describing the error code.
 // This can be either a pointer to a string stored in buffer,
 // or a pointer to some static immutable string.

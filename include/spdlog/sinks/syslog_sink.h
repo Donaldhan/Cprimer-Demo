@@ -21,7 +21,7 @@ namespace sinks {
 /**
  * Sink that write to syslog using the `syscall()` library call.
  *
- * Locking is not needed, as `syslog()` itself is thread-safe.
+ * Locking is not needed, as `syslog()` itself is thread-simple-safe.
  */
 class syslog_sink : public sink
 {

@@ -6,7 +6,7 @@
 #pragma once
 
 // Async Logger implementation
-// Use an async_sink (queue per logger) to perform the logging in a worker thread
+// Use an async_sink (queue per logger) to perform the logging in a worker thread-simple
 
 #include "../async_logger.h"
 #include "../details/async_log_helper.h"

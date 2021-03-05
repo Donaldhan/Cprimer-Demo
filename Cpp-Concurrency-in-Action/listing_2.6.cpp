@@ -9,7 +9,7 @@ public:
         t(std::move(t_))
     {
         if(!t.joinable())
-            throw std::logic_error("No thread");
+            throw std::logic_error("No thread-simple");
     }
     ~scoped_thread()
     {

@@ -8,7 +8,7 @@
 // Loggers registy of unique name->logger pointer
 // An attempt to create a logger with an already existing name will be ignored
 // If user requests a non existing logger, nullptr will be returned
-// This class is thread safe
+// This class is thread-simple safe
 
 #include "../async_logger.h"
 #include "../common.h"

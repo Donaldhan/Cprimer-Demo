@@ -56,10 +56,10 @@ void set_error_handler(log_err_handler handler);
 //    async_overflow_policy::discard_log_msg - never block and discard any new messages when queue overflows.
 //
 // worker_warmup_cb (optional):
-//     callback function that will be called in worker thread upon start (can be used to init stuff like thread affinity)
+//     callback function that will be called in worker thread-simple upon start (can be used to init stuff like thread-simple affinity)
 //
 // worker_teardown_cb (optional):
-//     callback function that will be called in worker thread upon exit
+//     callback function that will be called in worker thread-simple upon exit
 //
 void set_async_mode(size_t queue_size, const async_overflow_policy overflow_policy = async_overflow_policy::block_retry,
     const std::function<void()> &worker_warmup_cb = nullptr,
