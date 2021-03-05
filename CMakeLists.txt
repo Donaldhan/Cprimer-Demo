@@ -129,7 +129,23 @@ add_executable(Concurrency-mutex-ReadWriteLock concurrent/mutex-read-write-lock/
 
 ## 原子操作
 #TODO
-add_executable(Concurrency-atomic concurrent/atomic/AtomicMain.cpp)
+add_executable(Concurrency-atomic concurrent/atomic/AtomicMain.cpp concurrent/atomic/spinlock_mutex.h )
+add_executable(Concurrency-atomic-flag concurrent/atomic-flag/AtomicFlagMain.cpp)
+add_executable(Concurrency-atomic-int concurrent/atomic/AtomicIntMain.cpp)
+add_executable(Concurrency-atomic-operator concurrent/atomic-operator/AtomicOperatorMain.cpp)
+add_executable(Concurrency-atomic-fetch concurrent/atomic/AtomicFetch.cpp)
+add_executable(Concurrency-atomic-load concurrent/atomic/AtomicLoad.cpp concurrent/atomic/AtomicLoad.cpp)
+
+### 内存顺序
+
+# 宽松模型
+add_executable(Concurrency-atomic-memory-single-thread-order concurrent/atomic-memory/AtomicMemorySingleThreadOrder.cpp)
+# 释放/消费模型
+add_executable(Concurrency-atomic-memory-release-consume concurrent/atomic-memory/AtomicMemoryReleaseConsume.cpp)
+# 释放/获取模型
+add_executable(Concurrency-atomic-memory-release-acquire concurrent/atomic-memory/AtomicMemoryReleaseAcquire.cpp)
+# 顺序一致模型
+add_executable(Concurrency-atomic-memory-order-consistent concurrent/atomic-memory/AtomicMemoryOrderConsistent.cpp)
 
 ## 并发队列
 #TODO
