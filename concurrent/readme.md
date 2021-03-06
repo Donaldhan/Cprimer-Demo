@@ -27,15 +27,11 @@
 [C++ 线程池](https://wangpengcheng.github.io/2019/05/17/cplusplus_theadpool/) 
 
 
-# Boost
-## 队列
-[C++ boost库无锁队列多线程并行测试与编译方法](https://blog.csdn.net/miscclp/article/details/43331839)
-## 线程池
-[c++11：线程池，boost threadpool、thread_group example](https://blog.csdn.net/zzhongcy/article/details/89453370)
-[boost的threadpool的架构分析](https://www.zhihu.com/column/p/27269951)   
-## 时间
-
-
+# 网络编程
+[从零开始的C++网络编程](https://zhuanlan.zhihu.com/p/119085959)   
+[C++ 网络编程初学者的开源项目 | 码云周刊第 41 期](https://blog.gitee.com/2018/03/23/weekly041/)  
+[c++ 网络编程课设代码 网络编程入门教程 ---目录](https://www.cnblogs.com/DOMLX/p/9663167.html)   
+[Linux 多线程服务端编程：使用 muduo C++ 网络库](https://chenshuo.com/book/) 
 
 
 #  C++ 11 右值引用
