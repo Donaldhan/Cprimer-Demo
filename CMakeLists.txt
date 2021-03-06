@@ -23,6 +23,7 @@ set(CMAKE_CXX_STANDARD 11)
 #添加头文件搜索路径
 include_directories(include/spdlog)
 include_directories(include/json)
+include_directories(concurrent/queue)
 #LogFactory
 include_directories(spdlog)
 #include_directories(E:\\blockchain\\c++\\boost_1_65_0)
@@ -113,7 +114,7 @@ add_executable(Concurrency-thread-asyn-future concurrent/thread-asyn-future/Thre
 
 ### 线程池
 #TODO
-add_executable(Concurrency-thread-pool concurrent/thead-pool/TheadPoolMain.cpp)
+add_executable(Concurrency-thread-pool concurrent/thead-pool/TheadPoolMain.cpp concurrent/thead-pool/SafeQueue.h concurrent/thead-pool/ThreadPool.h)
 
 
 
@@ -124,11 +125,9 @@ add_executable(Concurrency-mutex-lock-gurad   concurrent/mutex-lock-guard/LockGu
 add_executable(Concurrency-mutex-lock-gurad-x concurrent/mutex-lock-guard/LockGuradMainWithAdoptLock.cpp)
 add_executable(Concurrency-mutex-unique-lock concurrent/mutex-unique-lock/UniqueLockMain.cpp)
 add_executable(Concurrency-mutex-condition concurrent/mutex-condition/MutexConditionMain.cpp)
-#TODO
 add_executable(Concurrency-mutex-ReadWriteLock concurrent/mutex-read-write-lock/ReadWriteLockMain.cpp)
 
 ## 原子操作
-#TODO
 add_executable(Concurrency-atomic concurrent/atomic/AtomicMain.cpp concurrent/atomic/spinlock_mutex.h )
 add_executable(Concurrency-atomic-flag concurrent/atomic-flag/AtomicFlagMain.cpp)
 add_executable(Concurrency-atomic-int concurrent/atomic/AtomicIntMain.cpp)
@@ -148,8 +147,7 @@ add_executable(Concurrency-atomic-memory-release-acquire concurrent/atomic-memor
 add_executable(Concurrency-atomic-memory-order-consistent concurrent/atomic-memory/AtomicMemoryOrderConsistent.cpp)
 
 ## 并发队列
-#TODO
-add_executable(Concurrency-queue concurrent/queue/ConcurrentQueueMain.cpp)
+add_executable(Concurrency-queue concurrent/queue/ConcurrentQueueMain.cpp concurrent/queue/ConcurrentQueue.h  )
 
 
 # 网络通信(nio aio,bio,epoll,reactor)
