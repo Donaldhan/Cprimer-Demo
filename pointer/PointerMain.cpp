@@ -3,6 +3,26 @@
  * @ClassName: Pointer
  * @Description:
  *
+ * 我们大多数场景下用到的应该都是 unique_ptr。
+unique_ptr 代表的是专属所有权，即由 unique_ptr 管理的内存，只能被一个对象持有。
+所以，unique_ptr 不支持复制和赋值
+
+ unique_ptr 代表的是专属所有权，如果想要把一个 unique_ptr 的内存交给另外一个 unique_ptr 对象管理。
+ 只能使用 std::move 转移当前对象的所有权。转移之后，当前对象不再持有此内存，新的对象将获得专属所有权。
+
+ std::shared_ptr 是通过指针保持对象共享所有权的智能指针。多个 shared_ptr 对象可占有同一对象。下列情况之一出现时销毁对象并解分配其内存：
+
+最后剩下的占有对象的 shared_ptr 被销毁；
+最后剩下的占有对象的 shared_ptr 被通过 operator= 或 reset() 赋值为另一指针。
+
+
+ std::weak_ptr 的另一用法是打断 std::shared_ptr 所管理的对象组成的环状引用。若这种环被孤立（例如无指向环中的外部共享指针），
+ 则 shared_ptr 引用计数无法抵达零，而内存被泄露。能令环中的指针之一为弱指针以避免此情况。
+
+ auto_ptr可以复制和赋值，存在指针对象被悬空，内存泄漏
+
+ *
+ *
  * @Author:  Ravitn
  * @Date: 2021-03-03 16:15
 */

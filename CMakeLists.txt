@@ -70,6 +70,9 @@ add_executable(Cprimer_Extends extend-isa/extends-isa-base/Animals.cpp extend-is
 # 模板
 add_executable(Cprimer_Template template/Stack.cpp template/Stack.h template/StackMain.cpp)
 
+# 异常
+add_executable(Cprimer_exception exception/ExceptionMain.cpp)
+
 # C++Tuple元组的详细用法
 add_executable(Cprimer_Tuple tuple/TupleMain.cpp tuple/TupleUtil.cpp tuple/TupleUtil.h tuple/TuplePrinter.h tuple/TupleString.cpp tuple/TupleString.h)
 

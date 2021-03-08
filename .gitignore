@@ -35,8 +35,11 @@
 .idea
 .git
 cmake-build-debug
+cmake-build-debug-cygwin
+cmake-build-debug-mingw
 cmake-build-release
-
+cmake-build-release-cygwin
+cmake-build-release-mingw
 # log
 *.log
 log
