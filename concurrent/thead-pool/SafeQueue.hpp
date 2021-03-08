@@ -7,8 +7,8 @@
 */
 
 
-#ifndef CPRIMER_DEMO_SAFEQUEUE_H
-#define CPRIMER_DEMO_SAFEQUEUE_H
+#ifndef CPRIMER_DEMO_SAFEQUEUE_HPP
+#define CPRIMER_DEMO_SAFEQUEUE_HPP
 #include <mutex>
 #include <queue>
 // Thread safe implementation of a Queue using a std::queue
@@ -69,4 +69,4 @@ public:
         return true;
     }
 };
-#endif CPRIMER_DEMO_SAFEQUEUE_H
+#endif CPRIMER_DEMO_SAFEQUEUE_HPP

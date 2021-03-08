@@ -117,7 +117,7 @@ add_executable(Concurrency-thread-asyn-future concurrent/thread-asyn-future/Thre
 
 ### 线程池
 #TODO
-add_executable(Concurrency-thread-pool concurrent/thead-pool/TheadPoolMain.cpp concurrent/thead-pool/SafeQueue.h concurrent/thead-pool/ThreadPool.h)
+add_executable(Concurrency-thread-pool concurrent/thead-pool/TheadPoolMain.cpp concurrent/thead-pool/SafeQueue.hpp concurrent/thead-pool/ThreadPool.h)
 
 
 
