@@ -150,7 +150,7 @@ add_executable(Concurrency-atomic-memory-order-consistent concurrent/atomic-memo
 add_executable(Concurrency-queue concurrent/queue/ConcurrentQueueMain.cpp concurrent/queue/ConcurrentQueue.h  )
 
 
-# 网络通信(nio aio,bio,epoll,reactor)
+# 网络通信(nio aio,bio,epoll,reactor, 基于linux， window)
 ## bio
 add_executable(Concurrency-network concurrent/network/NetworkMain.cpp)
 add_executable(Concurrency-network-server concurrent/network/bio/server/TcpSimpleServer.cpp)
@@ -163,8 +163,9 @@ add_executable(Concurrency-network-client concurrent/network/bio/client/TcpSimpl
 
 # boost
 add_executable(Boost boost/BoostMain.cpp)
-
-
+add_executable(Boost-date boost/boost-date/BoostDateMain.cpp)
+add_executable(Boost-threadpool boost/boost-threadpool/BoostThreadPoolMain.cpp)
+add_executable(Boost-collection boost/boost-collection/BoostCollectionMain.cpp)
 
 # 这里需要将子项目导入
 # “-”是你创建的子项目的名称
