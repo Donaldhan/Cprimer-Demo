@@ -18,6 +18,7 @@ int main() {
     std::cout << std::boolalpha <<":" << count.is_lock_free() << std::endl;
     std::thread t1([](){
         count.fetch_add(1);
+//        count.fetch_sub(1);
         std::cout << "threadId:" << std::this_thread::get_id()<< " count:" << count << "\n";
     });
     std::thread t2([](){

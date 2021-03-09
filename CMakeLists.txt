@@ -169,6 +169,7 @@ add_executable(network-server-epoll concurrent/network/linux/epoll/server/EpollS
 add_executable(network-client-epoll concurrent/network/linux/epoll/client/EpollClient.cpp)
 add_executable(network-server-multiThread concurrent/network/linux/bio/server/MultiThreadServer.cpp)
 add_executable(network-client-multiThread concurrent/network/linux/bio/client/MultiThreadClient.cpp)
+add_executable(network-http concurrent/network/linux/http/HttpServer.cpp)
 ## nio
 
 
