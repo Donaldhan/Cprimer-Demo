@@ -39,6 +39,9 @@ void proc1(int a)
     cout << "proc1 lock before, defer lock" << endl;
     //手动加锁，注意，不是m.lock();注意，不是m.lock(),m已经被g1接管了;
     g1.lock();
+//    g1.try_lock();
+//    g1.try_lock_for()
+//    g1.try_lock_until()
     cout << "proc1函数正在改写a" << endl;
     cout << "原始a为" << a << endl;
     cout << "现在a为" << a + 1 << endl;

@@ -55,10 +55,14 @@ int main() {
         while (flag.load(std::memory_order_acquire) < 2);
         std::cout <<"v.at(0):" << v.at(0) << std::endl; // must be 42
     });
+    //实际输出，vflag has changed to 2, expected:1v.at(0):42， 出现重排？？
 //    acqrel.join();
     release.join();
     //对于选项 std::memory_order_acq_rel 而言，则结合了这两者的特点，
     //唯一确定了一个内存屏障，使得当前线程对内存的读写不会被重排到此操作的前后。
+    //实际输出，重排？？
+    // vflag has changed to 2, expected:1
+    // v.at(0):42
     acqrel.join();
     acquire.join();
 }

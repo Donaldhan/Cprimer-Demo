@@ -95,6 +95,7 @@ add_executable(Lamdba lambda/LamdbaMain.cpp)
 
 # 智能指针
 add_executable(pointer pointer/PointerMain.cpp)
+add_executable(pointer-prior pointer/prior/PointerPriorMain.cpp)
 
 # 内存分配与回收
 add_executable(memory memory/MemoryMain.cpp memory/VectorDemo.cpp memory/VectorDemo.h)
@@ -155,9 +156,19 @@ add_executable(Concurrency-queue concurrent/queue/ConcurrentQueueMain.cpp concur
 
 # 网络通信(nio aio,bio,epoll,reactor, 基于linux， window)
 ## bio
-add_executable(Concurrency-network concurrent/network/NetworkMain.cpp)
-add_executable(Concurrency-network-server concurrent/network/bio/server/TcpSimpleServer.cpp)
-add_executable(Concurrency-network-client concurrent/network/bio/client/TcpSimpleClient.cpp)
+add_executable(network concurrent/network/NetworkMain.cpp)
+add_executable(network-server-tcp concurrent/network/linux/bio/server/TcpSimpleServer.cpp)
+add_executable(network-client-tcp concurrent/network/linux/bio/client/TcpSimpleClient.cpp)
+add_executable(network-server-udp concurrent/network/linux/bio/client/UdpSimpleClient.cpp)
+add_executable(network-client-udp concurrent/network/linux/bio/server/UdpSimpleServer.cpp)
+add_executable(network-server-multiprocess concurrent/network/linux/bio/server/MultiProcessServer.cpp)
+add_executable(network-client-multiprocess concurrent/network/linux/bio/client/MultiProcessClient.cpp)
+add_executable(network-server-select concurrent/network/linux/select/server/SelectIOServer.cpp)
+add_executable(network-client-select concurrent/network/linux/select/client/SelectIOClient.cpp)
+add_executable(network-server-epoll concurrent/network/linux/epoll/server/EpollServer.cpp)
+add_executable(network-client-epoll concurrent/network/linux/epoll/client/EpollClient.cpp)
+add_executable(network-server-multiThread concurrent/network/linux/bio/server/MultiThreadServer.cpp)
+add_executable(network-client-multiThread concurrent/network/linux/bio/client/MultiThreadClient.cpp)
 ## nio
 
 

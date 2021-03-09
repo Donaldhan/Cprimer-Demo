@@ -26,7 +26,8 @@ void append_numer(int x)
 {
     while (lock.test_and_set());//如果atomic_flag对象被设置，则返回true; 如果atomic_flag对象未被设置，则设置之，返回false
     stream << "thread#" << x << "id:" << this_thread::get_id() << endl;
-    lock.clear();//清楚atomic_flag对象
+    //清楚atomic_flag对象
+    lock.clear();
 }
 
 int main()

@@ -3,7 +3,7 @@
  * @ClassName: AtomicLoad
  * @Description:
  * compare_exchange_strong可以保证当atomic不等于expected时返回false，不需要循环保护。
- * std::atomic_flag是lock free的，但是atomic<bool>不一定是lock free的，可以用atomic<T>::is_lock_free()判断。
+ * std::atomic_flag是lock free(无锁模式)的，但是atomic<bool>不一定是lock free的，可以用atomic<T>::is_lock_free()判断。
  *
  * compare_exchange_weak/strong函数是保证在比较和交换执行下原子化,但是此函数可能与expected值相等的情形下atomic的T值没有替换为val，
  * 这时atomic值未变且返回false， compare_exchange_weak可能失败，
