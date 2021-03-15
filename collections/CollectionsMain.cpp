@@ -18,6 +18,7 @@
 #include <algorithm>
 #include <iterator>
 #include "LoggerFactory.h"
+#include <unordered_map>
 using namespace std;
 
 int main()
@@ -148,4 +149,12 @@ int main()
         log->info("multimap key:{}, value:{}",pair.first, pair.second);
     });
     log->info("=======multimap========");
+    unordered_map<int , string>  unorderedMap;
+    unorderedMap.insert(make_pair(1,"donald"));
+    unorderedMap.insert(make_pair(2,"jack"));
+    for_each(unorderedMap.begin(), unorderedMap.end(), [&] (pair<int, string> pair)
+   {
+       log->info("unorderedMap key:{}, value:{}",pair.first, pair.second);
+   });
+    log->info("=======unorderedMap========");
 }
