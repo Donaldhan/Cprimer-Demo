@@ -23,10 +23,5 @@ int main (int argc, char *argv[])
     double outputValue = sqrt(inputValue);
     fprintf(stdout,"The square root of %g is %g\n",
             inputValue, outputValue);
-    //
-    std::cout << "Hello, World!" << std::endl;
-    unsigned long const hardware_threads =
-            std::thread::hardware_concurrency();
-    std::cout << "hardware_threads：" <<hardware_threads;
     return 0;
 }

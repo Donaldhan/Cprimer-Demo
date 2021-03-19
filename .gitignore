@@ -40,6 +40,7 @@ cmake-build-debug-mingw
 cmake-build-release
 cmake-build-release-cygwin
 cmake-build-release-mingw
+build
 # log
 *.log
 log

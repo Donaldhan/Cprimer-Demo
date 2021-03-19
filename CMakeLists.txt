@@ -1,17 +1,31 @@
 # x.x是自身需要的Clion版本
 # cmake_minimum_required(VERSION <specify CMake version here>)
+cmake_minimum_required(VERSION 3.17)
 
 # 自己的项目名称
-project(Cprimer_Demo)
+#project(Cprimer_Demo "1.0.0")
+#project(Cprimer_Demo 1.0.0)
+project(Cprimer_Demo VERSION 1.3.8)
 
 # 版本号.
-set (CPRIMER_DEMO_VERSION_MAJOR 1)
-set (CPRIMER_DEMO_VERSION_MINOR 0)
+set (Tutorial_VERSION_MAJOR 1)
+set (Tutorial_VERSION_MINOR 3)
+set (Tutorial_VERSION_PATCH 8)
+
+
 
 # xx是你创建项目的时候使用的C++标准
 
 set(CMAKE_CXX_STANDARD 11)
 #set(CMAKE_CXX_FLAGS$ {CMAKE_CXX_FLAGS} -std = c ++ 11)
+
+#set(CMAKE_SYSTEM_NAME Windows)
+#set(TOOLCHAIN_PATH D:\\mingw-w64\\mingw32)
+#set(CMAKE_C_COMPILER ${TOOLCHAIN_PATH}\\bin\\gcc.exe)
+#set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PATH}\\bin\\g++.exe)
+#set(CMAKE_WINDOWS_KITS_10_DIR "")
+
+#cmake -G "MinGW Makefiles"
 
 #当编译一个需要第三方库的项目时，需要知道：
 #去哪找头文件（.h），-I（GCC）
@@ -46,11 +60,32 @@ include_directories(logger)
 #add_compile_options(-std=c++0x)
 
 
+
+#target_include_directories(Cprimer_Demo PUBLIC "${PROJECT_BINARY_DIR}")
+
+#   cmake start
+# 将构建目录添加到 include 的搜索路径中以便找到
+# TutorialConfig.h 文件
+include_directories("${PROJECT_BINARY_DIR}")
+
+# 配置一个头文件将一些 CMake 设置传入到源代码中
+# 以 TutorialConfig.h.in 为模版，替换相关变量
+# 以生成 TutorialConfig.h
+configure_file ("${PROJECT_SOURCE_DIR}/cmake/TutorialConfig.h.in" "${PROJECT_BINARY_DIR}/cmake/TutorialConfig.h")
+
 # “+”要更改成你想给这个结局方案的名称（这个可自定义），“*”是该主项目下的源文件名称
 # “+”与“*”之间有空格。
 # 如果想在主项目中添加文件，则在这里添加，如果在子文件夹中，则在子项目中添加
-
+#include_directories(${WinSDK})
+#target_link_libraries(tutorial ${WinSDK})
+add_executable(tutorial tutorial/TutorialMain.cpp)
 add_executable(Cprimer_Demo main.cpp)
+
+# cmake demo end
+
+
+
+
 # add_executable(Cprimer_Demo 6/good_printmain.cpp)
 # add_library(test_library STATIC 7/Sales_data.cpp)
 add_executable(Cprimer_Add_Item cplus/7/add_item.cpp cplus/7/Sales_data.h cplus/7/Sales_data.cpp extend-isa/extends-isa-base/Animals.h)
